@@ -4,7 +4,7 @@ Practice problems for building a strong foundation in SQL JOINs.
 
 Try to solve each problem without looking at the answers.
 
-Solutions will be kept separately in `CHEATCODES` folder.
+Solutions will be kept separately in [CHEATCODES](../CHEATCODES/PROBLEMS/JOIN.md) folder.
 
 ---
 
