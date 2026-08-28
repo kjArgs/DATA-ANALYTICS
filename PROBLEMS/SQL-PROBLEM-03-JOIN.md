@@ -2,11 +2,11 @@
 
 > Practice problems for building a strong foundation in SQL JOINs.
 >
-> Try to solve each problem before looking at the solutions.
+> Try to solve each problem **before looking at the solutions**.
 >
 > These problems are intentionally more challenging than the regular exercises. If you get stuck, use the answer key as a reference, then try to understand why the solution works rather than simply copying it.
 >
-> Solutions will be kept separately in **[CHEATCODES](../CHEATCODES/PROBLEMS/JOIN.md)** folder.
+> Try to solve the problems yourself before checking the answer key in **[PROBLEM-03-JOIN](../CHEATCODES/PROBLEMS/PROBLEM-03-JOIN.md)** file.
 
 ---
 
