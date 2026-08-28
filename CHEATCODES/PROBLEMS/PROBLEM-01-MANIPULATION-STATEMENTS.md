@@ -1,6 +1,6 @@
 # SQL Manipulation Cheatcodes
 
-> Solutions for the problems in **[SQL Join Problems](../../PROBLEMS/SQL-PROBLEM-01-MANIPULATION-STATEMENTS.md)**.
+> Solutions for the problems in **[SQL Database Manipulation Problems](../../PROBLEMS/SQL-PROBLEM-01-MANIPULATION-STATEMENTS.md)**.
 >
 > Try solving the problems yourself **before checking these**.
 
