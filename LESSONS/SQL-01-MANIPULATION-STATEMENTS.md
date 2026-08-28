@@ -6,13 +6,13 @@
 
 SQL can be used to:
 
-* Create tables
-* Insert data
-* Retrieve data
-* Update existing data
-* Delete data
-* Define relationships between tables
-* Apply rules and constraints to data
+- Create tables
+- Insert data
+- Retrieve data
+- Update existing data
+- Delete data
+- Define relationships between tables
+- Apply rules and constraints to data
 
 ---
 
@@ -330,12 +330,12 @@ FROM   → Which table do they come from?
 
 It can be used to:
 
-* Add columns
-* Modify columns
-* Rename columns
-* Drop columns
-* Add constraints
-* Drop constraints
+- Add columns
+- Modify columns
+- Rename columns
+- Drop columns
+- Add constraints
+- Drop constraints
 
 ### Add a column
 
@@ -458,7 +458,7 @@ user_id = 5
 → The condition identifying the row.
 ```
 
-### ⚠️ Important
+### Important
 
 Be careful when using `DELETE` without `WHERE`.
 
@@ -530,9 +530,9 @@ twice in the same table.
 
 A primary key:
 
-* Must be unique
-* Cannot contain `NULL`
-* Identifies a specific row
+- Must be unique
+- Cannot contain `NULL`
+- Identifies a specific row
 
 ---
 

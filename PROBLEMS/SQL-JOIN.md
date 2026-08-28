@@ -1,15 +1,18 @@
 # SQL JOIN Problems
 
-Practice problems for building a strong foundation in SQL JOINs.
-
-Try to solve each problem without looking at the answers.
-
-Solutions will be kept separately in [CHEATCODES](../CHEATCODES/PROBLEMS/JOIN.md) folder.
+> Practice problems for building a strong foundation in SQL JOINs.
+>
+> Try to solve each problem before looking at the solutions.
+>
+> These problems are intentionally more challenging than the regular exercises. If you get stuck, use the answer key as a reference, then try to understand why the solution works rather than simply copying it.
+>
+> Solutions will be kept separately in **[CHEATCODES](../CHEATCODES/PROBLEMS/JOIN.md)** folder.
 
 ---
 
 # Reference Tables
-Check [SAMPLE_DATABASE](../SQL-DATABASE-COPY-PASTE.md) for the whole schema.
+
+Check [SAMPLE_DATABASE](../SQL-DATABASE-SETUP.md) for the whole schema.
 
 ## Relationships
 

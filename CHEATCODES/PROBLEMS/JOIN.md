@@ -1,8 +1,8 @@
 # SQL JOIN Cheatcodes
 
-Solutions for the problems in [SQL Join Problems](../../PROBLEMS/SQL-JOIN.md).
-
-Try solving the problems yourself before checking these.
+> Solutions for the problems in **[SQL Join Problems](../../PROBLEMS/SQL-JOIN.md)**.
+>
+> Try solving the problems yourself before checking these.
 
 ---
 
@@ -25,12 +25,13 @@ INNER JOIN users u
 ## Problem 2 — Orders from Active Users
 
 ```sql
-    SELECT o.id AS order_id, 
-    u.name AS user_name, 
-    total
+SELECT
+    o.id AS order_id,
+    u.name AS user_name,
+    o.total
 FROM orders o
 INNER JOIN users u
-    ON o.user_id = u.id 
+    ON o.user_id = u.id
 WHERE u.status = 'Active';
 ```
 
@@ -39,9 +40,9 @@ WHERE u.status = 'Active';
 ## Problem 3 — Every User and Their Orders
 
 ```sql
-SELECT 
-    u.name AS user_name, 
-    o.id AS oder_id, 
+SELECT
+    u.name AS user_name,
+    o.id AS order_id,
     o.total
 FROM users u
 LEFT JOIN orders o
@@ -60,7 +61,7 @@ SELECT
 FROM users u
 LEFT JOIN orders o
     ON u.id = o.user_id
-WHERE u.status = 'active';
+WHERE u.status = 'Active';
 ```
 
 ---
@@ -87,7 +88,7 @@ SELECT
     o.id AS order_id,
     u.name AS user_name
 FROM orders o
-INNER JOIN users o
+INNER JOIN users u
     ON o.user_id = u.id;
 ```
 
@@ -99,7 +100,7 @@ INNER JOIN users o
 SELECT
     u.name
 FROM users u
-LEFT JOIN orders u
+LEFT JOIN orders o
     ON u.id = o.user_id
 WHERE o.id IS NULL;
 ```
@@ -195,7 +196,7 @@ SELECT
 FROM users u
 INNER JOIN orders o
     ON u.id = o.user_id
-WHERE u.status = 'active'
+WHERE u.status = 'Active'
 GROUP BY u.name
 HAVING COUNT(o.id) >= 2;
 ```
@@ -250,7 +251,7 @@ GROUP BY u.name;
 
 ```sql
 SELECT
-    users.name AS user_name,
+    u.name AS user_name,
     SUM(o.total) AS total_spent
 FROM users u
 LEFT JOIN orders o
@@ -269,7 +270,7 @@ HAVING SUM(o.total) > 1500;
 SELECT
     o.id AS order_id,
     u.name AS user_name,
-    pr.name AS product_name
+    p.name AS product_name
 FROM orders o
 LEFT JOIN users u
     ON u.id = o.user_id
@@ -304,7 +305,7 @@ INNER JOIN orders o
     ON u.id = o.user_id
 INNER JOIN products p
     ON o.product_id = p.id
-WHERE u.status = 'active'
+WHERE u.status = 'Active'
     AND p.name = 'Monitor'
 GROUP BY u.name
 HAVING SUM(o.total) > 1000;
