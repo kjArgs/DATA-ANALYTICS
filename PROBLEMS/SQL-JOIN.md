@@ -9,46 +9,7 @@ Solutions will be kept separately in [CHEATCODES](../CHEATCODES/PROBLEMS/JOIN.md
 ---
 
 # Reference Tables
-
-## `users`
-
-|  id | name    | email               | status   | age | phone       |
-| --: | ------- | ------------------- | -------- | --: | ----------- |
-|   1 | Alice   | alice@example.com   | active   |  24 | 09171234567 |
-|   2 | Bob     | bob@example.com     | inactive |  31 | NULL        |
-|   3 | Charlie | charlie@example.com | active   |  19 | 09181234567 |
-|   4 | Diana   | diana@example.com   | active   |  42 | NULL        |
-|   5 | Ethan   | ethan@example.com   | inactive |  27 | 09201234567 |
-
-## `orders`
-
-|  id | user_id | total |
-| --: | ------: | ----: |
-|   1 |       1 |   500 |
-|   2 |       1 |  1200 |
-|   3 |       2 |   800 |
-|   4 |       4 |  2500 |
-|   5 |       4 |   300 |
-
-## `products`
-
-|  id | name     | price |
-| --: | -------- | ----: |
-|   1 | Keyboard |  1000 |
-|   2 | Mouse    |   500 |
-|   3 | Monitor  |  5000 |
-
-## `orders` with `product_id`
-
-For the problems involving products, use this version of `orders`:
-
-|  id | user_id | product_id | total |
-| --: | ------: | ---------: | ----: |
-|   1 |       1 |          1 |   500 |
-|   2 |       1 |          3 |  1200 |
-|   3 |       2 |          2 |   800 |
-|   4 |       4 |          3 |  2500 |
-|   5 |       4 |          1 |   300 |
+Check [SAMPLE_DATABASE](../SQL-DATABASE-COPY-PASTE.md) for the whole schema.
 
 ## Relationships
 

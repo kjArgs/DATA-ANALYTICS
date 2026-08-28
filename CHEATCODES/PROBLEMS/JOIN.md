@@ -12,12 +12,12 @@ Try solving the problems yourself before checking these.
 
 ```sql
 SELECT
-    orders.id AS order_id,
-    users.name AS user_name,
-    orders.total
-FROM orders
-INNER JOIN users
-    ON orders.user_id = users.id;
+    o.id AS order_id,
+    u.name AS user_name,
+    o.total
+FROM orders o
+INNER JOIN users u
+    ON o.user_id = u.id;
 ```
 
 ---
@@ -25,14 +25,13 @@ INNER JOIN users
 ## Problem 2 — Orders from Active Users
 
 ```sql
-SELECT
-    orders.id AS order_id,
-    users.name AS user_name,
-    orders.total
-FROM orders
-INNER JOIN users
-    ON orders.user_id = users.id
-WHERE users.status = 'active';
+    SELECT o.id AS order_id, 
+    u.name AS user_name, 
+    total
+FROM orders o
+INNER JOIN users u
+    ON o.user_id = u.id 
+WHERE u.status = 'Active';
 ```
 
 ---
@@ -40,13 +39,13 @@ WHERE users.status = 'active';
 ## Problem 3 — Every User and Their Orders
 
 ```sql
-SELECT
-    users.name AS user_name,
-    orders.id AS order_id,
-    orders.total
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id;
+SELECT 
+    u.name AS user_name, 
+    o.id AS oder_id, 
+    o.total
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id;
 ```
 
 ---
@@ -55,13 +54,13 @@ LEFT JOIN orders
 
 ```sql
 SELECT
-    users.name AS user_name,
-    orders.id AS order_id,
-    orders.total
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-WHERE users.status = 'active';
+    u.name AS user_name,
+    o.id AS order_id,
+    o.total
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+WHERE u.status = 'active';
 ```
 
 ---
@@ -70,13 +69,13 @@ WHERE users.status = 'active';
 
 ```sql
 SELECT
-    users.name AS user_name,
-    orders.id AS order_id,
-    orders.total
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-    AND orders.total > 1000;
+    u.name AS user_name,
+    o.id AS order_id,
+    o.total
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+    AND o.total > 1000;
 ```
 
 ---
@@ -85,11 +84,11 @@ LEFT JOIN orders
 
 ```sql
 SELECT
-    orders.id AS order_id,
-    users.name AS user_name
-FROM orders
-INNER JOIN users
-    ON orders.user_id = users.id;
+    o.id AS order_id,
+    u.name AS user_name
+FROM orders o
+INNER JOIN users o
+    ON o.user_id = u.id;
 ```
 
 ---
@@ -98,11 +97,11 @@ INNER JOIN users
 
 ```sql
 SELECT
-    users.name
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-WHERE orders.id IS NULL;
+    u.name
+FROM users u
+LEFT JOIN orders u
+    ON u.id = o.user_id
+WHERE o.id IS NULL;
 ```
 
 ---
@@ -111,21 +110,21 @@ WHERE orders.id IS NULL;
 
 ```sql
 SELECT DISTINCT
-    users.name
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-WHERE orders.id IS NOT NULL;
+    u.name
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+WHERE o.id IS NOT NULL;
 ```
 
 An `INNER JOIN` would also work:
 
 ```sql
 SELECT DISTINCT
-    users.name
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id;
+    u.name
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id;
 ```
 
 ---
@@ -134,12 +133,12 @@ INNER JOIN orders
 
 ```sql
 SELECT
-    users.name AS user_name,
-    COUNT(orders.id) AS order_count
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-GROUP BY users.name;
+    u.name AS user_name,
+    COUNT(o.id) AS order_count
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+GROUP BY u.name;
 ```
 
 ---
@@ -164,10 +163,10 @@ GROUP BY users.name;
 
 ```sql
 SELECT DISTINCT
-    users.name
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id;
+    u.name
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id;
 ```
 
 ---
@@ -176,13 +175,13 @@ INNER JOIN orders
 
 ```sql
 SELECT
-    users.name AS user_name,
-    COUNT(orders.id) AS order_count
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id
-GROUP BY users.name
-HAVING COUNT(orders.id) >= 2;
+    u.name AS user_name,
+    COUNT(o.id) AS order_count
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id
+GROUP BY u.name
+HAVING COUNT(o.id) >= 2;
 ```
 
 ---
@@ -191,14 +190,14 @@ HAVING COUNT(orders.id) >= 2;
 
 ```sql
 SELECT
-    users.name AS user_name,
-    COUNT(orders.id) AS order_count
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id
-WHERE users.status = 'active'
-GROUP BY users.name
-HAVING COUNT(orders.id) >= 2;
+    u.name AS user_name,
+    COUNT(o.id) AS order_count
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id
+WHERE u.status = 'active'
+GROUP BY u.name
+HAVING COUNT(o.id) >= 2;
 ```
 
 ---
@@ -207,13 +206,13 @@ HAVING COUNT(orders.id) >= 2;
 
 ```sql
 SELECT
-    users.name AS user_name,
-    SUM(orders.total) AS total_spent
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id
-GROUP BY users.name
-HAVING SUM(orders.total) > 1000;
+    u.name AS user_name,
+    SUM(o.total) AS total_spent
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id
+GROUP BY u.name
+HAVING SUM(o.total) > 1000;
 ```
 
 ---
@@ -222,12 +221,12 @@ HAVING SUM(orders.total) > 1000;
 
 ```sql
 SELECT
-    users.name AS user_name,
-    COALESCE(SUM(orders.total), 0) AS total_spent
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-GROUP BY users.name;
+    u.name AS user_name,
+    COALESCE(SUM(o.total), 0) AS total_spent
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+GROUP BY u.name;
 ```
 
 ---
@@ -236,13 +235,13 @@ GROUP BY users.name;
 
 ```sql
 SELECT
-    users.name AS user_name,
-    COUNT(orders.id) AS order_count
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-    AND orders.total > 500
-GROUP BY users.name;
+    u.name AS user_name,
+    COUNT(o.id) AS order_count
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+    AND o.total > 500
+GROUP BY u.name;
 ```
 
 ---
@@ -252,12 +251,12 @@ GROUP BY users.name;
 ```sql
 SELECT
     users.name AS user_name,
-    SUM(orders.total) AS total_spent
-FROM users
-LEFT JOIN orders
-    ON users.id = orders.user_id
-GROUP BY users.name
-HAVING SUM(orders.total) > 1500;
+    SUM(o.total) AS total_spent
+FROM users u
+LEFT JOIN orders o
+    ON u.id = o.user_id
+GROUP BY u.name
+HAVING SUM(o.total) > 1500;
 ```
 
 ---
@@ -268,14 +267,14 @@ HAVING SUM(orders.total) > 1500;
 
 ```sql
 SELECT
-    orders.id AS order_id,
-    users.name AS user_name,
-    products.name AS product_name
-FROM orders
-LEFT JOIN users
-    ON users.id = orders.user_id
-LEFT JOIN products
-    ON orders.product_id = products.id;
+    o.id AS order_id,
+    u.name AS user_name,
+    pr.name AS product_name
+FROM orders o
+LEFT JOIN users u
+    ON u.id = o.user_id
+LEFT JOIN products p
+    ON o.product_id = p.id;
 ```
 
 ---
@@ -284,12 +283,12 @@ LEFT JOIN products
 
 ```sql
 SELECT
-    products.name AS product_name,
-    COUNT(orders.id) AS order_count
-FROM products
-LEFT JOIN orders
-    ON products.id = orders.product_id
-GROUP BY products.name;
+    p.name AS product_name,
+    COUNT(o.id) AS order_count
+FROM products p
+LEFT JOIN orders o
+    ON p.id = o.product_id
+GROUP BY p.name;
 ```
 
 ---
@@ -298,15 +297,15 @@ GROUP BY products.name;
 
 ```sql
 SELECT
-    users.name AS user_name,
-    SUM(orders.total) AS monitor_spending
-FROM users
-INNER JOIN orders
-    ON users.id = orders.user_id
-INNER JOIN products
-    ON orders.product_id = products.id
-WHERE users.status = 'active'
-    AND products.name = 'Monitor'
-GROUP BY users.name
-HAVING SUM(orders.total) > 1000;
+    u.name AS user_name,
+    SUM(o.total) AS monitor_spending
+FROM users u
+INNER JOIN orders o
+    ON u.id = o.user_id
+INNER JOIN products p
+    ON o.product_id = p.id
+WHERE u.status = 'active'
+    AND p.name = 'Monitor'
+GROUP BY u.name
+HAVING SUM(o.total) > 1000;
 ```
