@@ -1,6 +1,6 @@
 # SQL JOIN Cheatcodes
 
-> Solutions for the problems in **[SQL Join Problems](../../PROBLEMS/SQL-PROBLEM-03-JOIN.md)**.
+> Solutions for the problems in **[SQL Join Problems](../../PROBLEMS/SQL-PROBLEM-04-JOIN.md)**.
 >
 > Try solving the problems yourself **before checking these**.
 

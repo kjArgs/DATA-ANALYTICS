@@ -6,7 +6,7 @@
 >
 > These problems are intentionally more challenging than the regular exercises. If you get stuck, use the answer key as a reference, then try to understand why the solution works rather than simply copying it.
 >
-> Try to solve the problems yourself before checking the answer key in **[PROBLEM-03-JOIN](../CHEATCODES/PROBLEMS/PROBLEM-03-JOIN.md)** file.
+> Try to solve the problems yourself before checking the answer key in **[PROBLEM-04-JOIN](../CHEATCODES/PROBLEMS/PROBLEM-04-JOIN.md)** file.
 
 ---
 
