@@ -1,6 +1,6 @@
 # SQL EXERCISE 02 — QUERY FUNDAMENTALS
 
-> **Prerequisite:** Complete [SQL-01-QUERIES](../LESSONS/SQL-01-QUERIES.md).
+> **Prerequisite:** Complete [SQL-02-QUERIES](../LESSONS/SQL-02-QUERIES.md).
 >
 > **Database setup:** Run [SQL-DATABASE-COPY-PASTE](../SQL-DATABASE-COPY-PASTE.md) before starting.
 >

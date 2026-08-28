@@ -1,6 +1,6 @@
 # SQL EXERCISE 03 — JOIN
 
-> **Prerequisite:** Complete [SQL-02-JOIN](../LESSONS/SQL-02-JOIN.md).
+> **Prerequisite:** Complete [SQL-03-JOIN](../LESSONS/SQL-03-JOIN.md).
 >
 > **Database setup:** Run [SQL-DATABASE-COPY-PASTE](../SQL-DATABASE-COPY-PASTE.md) before starting.
 >
