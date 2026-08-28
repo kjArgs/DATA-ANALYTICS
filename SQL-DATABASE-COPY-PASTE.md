@@ -63,6 +63,8 @@ VALUES
 
 ## ORDERS TABLE
 
+### Creating the table
+
 ```sql
 CREATE TABLE orders(
     id INT AUTO_INCREMENT PRIMARY KEY,
