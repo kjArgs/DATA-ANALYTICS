@@ -5,7 +5,7 @@ Aggregate functions perform a calculation on **multiple rows** and return a sing
 Common aggregate functions are:
 
 | Function  
-| ---------
+| --------- | -------------------------------- |
 | `COUNT()` 
 | `SUM()`  
 | `MIN()`   
