@@ -44,6 +44,54 @@ KEEP EVERYTHING FROM THE LEFT
 
 ---
 
+## CROSS JOIN
+
+**combine all rows of one table with all rows of another table.**
+
+```sql
+SELECT u.id, o.total
+FROM users u
+CROSS JOIN orders o;
+```
+```text
+if the it multiplies the table depending in how many rows are there from the CROSS JOIN table.
+```
+
+## UNION
+**stack one dataset on top of the other**
+```text
+SQL has strict rules for appending data:
+
+1. Tables must have the same number of columns.
+2. The columns must have the same data types in the same order as the first table.
+```
+```sql
+SELECT *
+FROM table1
+UNION
+SELECT *
+FROM table2;
+```
+## WITH
+
+```text
+ combine two tables, but one of the tables is the result of another calculation.
+```
+```sql
+WITH previous_results AS (
+   SELECT ...
+   ...
+   ...
+   ...
+)
+SELECT *
+FROM previous_results
+JOIN customers
+  ON _____ = _____;
+
+```
+
+
 ## ON
 
 Defines **how the tables connect**.
@@ -168,6 +216,19 @@ Otherwise → use the SUM(...)
 ```
 
 ---
+## PRIMARY KEY AND FOREIGN KEY
+```text 
+-- are the keys that uniquely identifies its rows
+
+Primary keys have a few requirements:
+
+1. None of the values can be NULL.
+
+2. Each value must be unique (i.e., you can’t have two customers with the same customer_id in the customers table).
+
+3. A table can not have more than one primary key column.
+
+```
 
 # Mental Model
 
